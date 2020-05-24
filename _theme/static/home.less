@@ -1,5 +1,54 @@
 .home{
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
-  background: red;
+  background: rgb(230, 241, 255);
+  .home-content{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+    transform: translateY(-50%);
+    h3{
+      color: #000;
+      font-size: 30px;
+    }
+    .home-link{
+      a {
+        display: inline-block;;
+        width: 120px;
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        border-radius: 4px;
+        text-align: center;
+        text-decoration: none;
+        margin: 0 5px;
+        font-weight: 600;
+      }
+      a.github{
+        background: #24292D;
+        color: rgba(255, 255, 255, 0.75);
+        box-shadow: 0 0 10px -3px #666;
+        transition: box-shadow .8s;
+        &:hover{
+          color: rgba(255, 255, 255, 1);
+          box-shadow: 0 0 29px -3px #666;
+        }
+      }
+      a.start{
+        background: #2a85ff;
+        color: #fff;
+        box-shadow: 0 0 10px -3px #666;
+        &:hover {
+          box-shadow: 0 0 29px -3px #666;
+          transition: box-shadow .8s;
+        }
+      }
+    }
+    .slogan{
+      margin: 20px 0;
+      color: #999;
+      font-weight: bold;
+    }
+  }
 }
