@@ -1,1 +1,2 @@
-require('./site.css');
+import './main.css';
+import './home.less';
