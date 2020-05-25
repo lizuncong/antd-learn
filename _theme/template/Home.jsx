@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 require('../static/style');
+require('antd/dist/antd.css');
 
 export default function Home() {
 
@@ -16,12 +17,12 @@ export default function Home() {
           >
             GitHub
           </a>
-          <Link className="start" to="/articles">
+          <Link className="start" to="/docs/start">
             Get Started
           </Link>
         </div>
         <div className="slogan">
-          React组件库，仅供学习
+          React组件库，仅供学习bisheng
         </div>
       </div>
     </div>
