@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from '../Layout';
-import DemoArticle from './DemoArticle';
-import PureArticle from '../Docs/doc';
+import DemoDoc from './DemoDoc';
+import Doc from '../Docs/doc';
 
 export default class Component extends React.Component {
 
   render(){
     const { route, data, routeParams, pageData, utils } = this.props;
+    console.log('component...', this.props);
     let type;
     if (pageData.demo) {
       type = 'demo';
@@ -19,12 +20,12 @@ export default class Component extends React.Component {
       >
         {
           type === 'demo'
-            ? <DemoArticle
+            ? <DemoDoc
               routeParams={routeParams}
               pageData={pageData}
               utils={utils}
             />
-            : <PureArticle pageData={pageData} utils={utils}/>
+            : <Doc pageData={pageData} utils={utils}/>
         }
       </Layout>
     )

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router';
-require('../static/style');
-require('antd/dist/antd.css');
+import '../../static/style';
+import './index.less';
+import 'antd/dist/antd.css';
 
 export default function Home() {
 
@@ -11,9 +12,9 @@ export default function Home() {
         <h3>react ui</h3>
         <div className="home-link">
           <a
-              href="https://github.com/lizuncong/antd-learn"
-              className="github"
-              target="_blank"
+            href="https://github.com/lizuncong/antd-learn"
+            className="github"
+            target="_blank"
           >
             GitHub
           </a>

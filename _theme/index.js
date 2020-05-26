@@ -1,12 +1,10 @@
-const path = require('path');
-
 module.exports = {
   lazyLoad: false,
   home: '/',
   routes: [
     {
       path: '/',
-      component: './template/Home'
+      component: './template/Home/index'
     },
     {
       path: '/components/:doc',

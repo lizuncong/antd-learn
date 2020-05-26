@@ -5,16 +5,6 @@ import { Link } from 'react-router';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
-const componentOrder = [
-  '通用',
-  '布局',
-  '导航',
-  '数据录入',
-  '数据展示',
-  '反馈',
-  '其他'
-];
-
 function getComponentsMenuLink(meta) {
   const filename = meta.filename;
   const link = '/' + filename.slice(0, filename.indexOf('index.md') - 1);
@@ -30,19 +20,27 @@ function getComponentsMenuItem(menus) {
 }
 
 function getComponentsMenuGroups(data) {
+  const componentOrder = [
+    '通用',
+    '布局',
+    '导航',
+    '数据录入',
+    '数据展示',
+    '反馈',
+    '其他'
+  ];
   const menuGroups = componentOrder.map(category => ({
     category: category,
     menus: []
   }));
   for (let key in data) {
-    if (key !== 'about') {
-      const curCategory = data[key].index.meta.category;
-      const idx = componentOrder.indexOf(curCategory);
-      if (idx !== -1) {
-        const menuData = data[key].index;
-        menuData.key = key;
-        menuGroups[idx].menus.push(menuData);
-      }
+    if(key === 'about') continue;
+    const curCategory = data[key].index.meta.category;
+    const idx = componentOrder.indexOf(curCategory);
+    if (idx !== -1) {
+      const menuData = data[key].index;
+      menuData.key = key;
+      menuGroups[idx].menus.push(menuData);
     }
   }
   return menuGroups.map((item) => {
@@ -54,16 +52,18 @@ function getComponentsMenuGroups(data) {
 
 export default function ComponentsMenu(props) {
   const { data, defaultSelectedKey } = props;
-  return (<Menu
-    mode={props.mode}
-    defaultOpenKeys={['components']}
-    selectedKeys={[defaultSelectedKey]}
-  >
-    <Menu.Item key="about">
-      <Link to="/components/about">基本介绍</Link>
-    </Menu.Item>
-    <SubMenu key={'components'} title={'组件'}>
-      { getComponentsMenuGroups(data) }
-    </SubMenu>
-  </Menu>);
+  return (
+    <Menu
+      mode="inline"
+      defaultOpenKeys={['components']}
+      selectedKeys={[defaultSelectedKey]}
+    >
+      <Menu.Item key="about">
+        <Link to="/components/about">基本介绍</Link>
+      </Menu.Item>
+      <SubMenu key={'components'} title={'组件'}>
+        { getComponentsMenuGroups(data) }
+      </SubMenu>
+    </Menu>
+  );
 }

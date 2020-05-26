@@ -40,17 +40,17 @@ export default class DemoItem extends React.Component {
   }
 
   render() {
-    const props = this.props;
+    const { title, content, code, children } = this.props;
     return <div className="demo-item">
-      <h3 className="demo-title">{props.title}</h3>
-      <div className="demo-desc">{props.content}</div>
+      <h3 className="demo-title">{title}</h3>
+      <div className="demo-desc">{content}</div>
       <Row ref={ ref => { this.watchRef = ref; } }>
-        <Col span={this.props.isWide ? 12 : 24 } className="demo-item-code">
-          <CodePreview title={props.title}>{props.code}</CodePreview>
+        <Col span={this.state.intoViewport ? 12 : 24} className="demo-item-code">
+          <CodePreview title={title}>{code}</CodePreview>
         </Col>
         {
-          this.props.isWide && this.state.intoViewport ? <Col span={12} className="demo-item-preview">
-              {props.children}
+          this.state.intoViewport ? <Col span={12} className="demo-item-preview">
+              {children}
             </Col> : null
         }
       </Row>

@@ -26,6 +26,7 @@ export default function ArticlesMenu(props) {
   const {data, defaultSelectedKey} = props;
   return (
     <Menu
+      mode="inline"
       defaultSelectedKeys={[defaultSelectedKey]}
     >
       { getDocsMenu(data)}

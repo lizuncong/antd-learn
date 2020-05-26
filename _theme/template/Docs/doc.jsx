@@ -1,13 +1,13 @@
 import React from 'react';
 
 export default function Doc(props) {
-  const pageData = props.pageData;
+  const { pageData, utils } = props;
   const pageContent = pageData.content;
   const title = pageData.meta.title;
   return <div>
     <h1>{title}</h1>
     <div className="page-content">
-      {props.utils.toReactComponent(pageContent)}
+      {utils.toReactComponent(pageContent)}
     </div>
   </div>;
 };
