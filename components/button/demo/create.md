@@ -6,15 +6,12 @@ order: 1
 这个例子演示如何创建按钮；
 
 ```jsx
+import { Button } from 'react-ui';
 class App extends React.Component{
   
   render(){
     return <div>
-        <button onClick={() => {
-            alert('this is a button!')
-        }}>
-            我是一个按钮
-        </button>
+       <Button />
     </div>
   }
 }

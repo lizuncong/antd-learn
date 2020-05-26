@@ -15,4 +15,10 @@ module.exports = {
     'bisheng-plugin-antd'
   ],
   port: 9007, // 本地服务监听的端口
+  webpackConfig(config) {
+    config.resolve.alias = {
+      'react-ui': path.join(process.cwd(), 'index'),
+    };
+    return config;
+  }
 };
