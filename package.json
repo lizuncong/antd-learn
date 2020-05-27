@@ -6,6 +6,7 @@
   "scripts": {
     "bisheng-start": "bisheng start",
     "bisheng-build": "bisheng build",
+    "bisheng-deploy": "bisheng gh-pages",
     "babel-build": "rm -rf lib && babel components -d lib",
     "webpack-build": "rm -rf dist && webpack && NODE_ENV=production webpack -p"
   },
