@@ -1,37 +1,39 @@
 ---
 category: 通用
-order: 6
-title: Button 组件
+order: 1
+title: Button 按钮
 ---
+
+按钮用于开始一个即时操作。
 
 ## 何时使用
 
-需要使用按钮的地方都可以用
+标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+
+在 React UI 中我们提供了四种按钮。
+
+- 主按钮：用于主行动点，一个操作区域只能有一个主按钮。
+- 默认按钮：用于没有主次之分的一组行动点。
+- 虚线按钮：常用于添加操作。
+- 链接按钮：用于次要或外链的行动点。
+
+以及四种状态属性与上面配合使用。
+- 危险：删除/移动/修改权限等危险操作，一般需要二次确认。
+- 幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。
+- 禁用：行动点不可用的时候，一般需要文案解释。
+- 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
+
 
 
 ## API
 
-### 动态属性
+通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` 
+-> `size` -> `loading` -> `disabled`。
 
-| 属性 | 类型 | 默认取值 | 说明 |
-|------|-----|------|-----|
-| center | [LngLat](http://lbs.amap.com/api/javascript-api/reference/core#LngLat) 或者 `{longitude, latitude}`  | / | 圆心位置 |
-| radius | `Number` | / | 圆半径，单位:米 |
-| draggable | `Boolean` | false | 圆形是否可拖拽 |
-| extData | 任意 | / | 用户自定义属性，支持JavaScript API任意数据类型，如Circle的id等 |
-  
+按钮的属性说明如下：
 
-### 静态属性
-
-| 属性     | 类型 | 默认取值 | 说明     |
-|----------|-----------|-------|-----|
-| zIndex | `Number`  | 10    | 层叠顺序 |
-| bubble | `Boolean` | false | 是否将覆盖物的鼠标或touch等事件冒泡到地图上 |
-
-
-### 扩展的动态属性
-
-| 属性     | 类型 | 默认取值 | 说明     |
-|----------|-----------|-------|-----|
-| style   | `{ strokeColor, strokeOpacity, strokeWeight, fillColor, fillOpacity, strokeStyle, strokeDasharray }` | / | 绘制圆形的外观，各个字段取值类型参考[CircleOptions](http://lbs.amap.com/api/javascript-api/reference/overlay#Circle) |
-| visible | `Boolean` | true | 圆形的显示/隐藏状态 |
+| 属性 | 说明 | 类型 | 默认值 | 版本 |
+| --- | --- | --- | --- | --- |
+| disabled | 按钮失效状态 | boolean | `false` | v1.0 |
+| ghost | 幽灵属性，使按钮背景透明 | boolean | `false` | v1.0 |
+| href | 点击跳转的地址，指定此属性 button 的行为和 a 链接一致 | string | - | |
