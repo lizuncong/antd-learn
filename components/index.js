@@ -1,10 +1,12 @@
-import Button from './button';
-
+import Button from './button/index.jsx';
+import Alert from './alert/index.jsx'
 
 export {
-  Button
+  Button,
+  Alert
 };
 
 export default {
-  Button
+  Button,
+  Alert
 };
